@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41cc4190-969f-4a21-b2dc-dd772441fa80" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/src/components/Common/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/src/components/Common/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/src/components/Index/BookBox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/src/components/Index/BookBox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/static/js/jquery-1.8.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_client/static/js/jquery-1.8.3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/StoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/configure/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/configure/CrossFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/configure/DruidConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/configure/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/configure/myConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/FileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/PublishController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/SortController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/TopicController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/BookImg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/BookSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/BookSortList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/BookTopic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/Publish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/Recommend.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/book/SubBookTopic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/CartBookDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/OrderBookDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/OrderDetailDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/OrderDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/OrderInitDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/OrderStatistic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/SortBookRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/SortResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/SubTopicRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/dto/TopicBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/Coupon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/Expense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/OrderStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/order/UserCoupon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/user/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/user/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/user/SecurityUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/entity/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/AddressMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/BookMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/CartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/ExpenseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/PublishMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/SortMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/TopicMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/CustomAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/JwtAuthenticationTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/MyUserDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/RestAuthenticationEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/RestfulAccessDeniedHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/AddressServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/BookServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/CartServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/ExpenseServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/PublishServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/SortServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/TopicServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/UserServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/AddressService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/ExpenseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/PublishService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/SortService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/TopicService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/service/imp/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/util/FileUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/util/JwtTokenUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/util/ResultUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/util/UploadUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/java/com/huang/store/util/UuidUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/resources/mapping/BookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/main/resources/mapping/BookMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookStore-Springboot-Vue-master/bookstore_server/src/test/java/com/huang/store/StoreApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="320Eaf2q0iDz8krRs1lvoYjJddm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/MyAllData/Desktop/Project/bookstore",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="41cc4190-969f-4a21-b2dc-dd772441fa80" name="更改" comment="" />
+      <created>1756549156207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756549156207</updated>
+      <workItem from="1756549158332" duration="34000" />
+    </task>
+    <servers />
+  </component>
+</project>

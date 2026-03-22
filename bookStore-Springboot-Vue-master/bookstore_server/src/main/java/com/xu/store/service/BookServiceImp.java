@@ -140,8 +140,8 @@ public class BookServiceImp implements BookService {
     }
 
     @Override
-    public List<Book> getBookByName(String bookName) {
-        return bookMapper.getBookByName(bookName);
+    public List<Book> getBooksByName(String bookName) {
+        return bookMapper.getBooksByName(bookName);
     }
 
     @Override
@@ -346,7 +346,7 @@ public class BookServiceImp implements BookService {
 
         if (item == null || item.isEmpty()) {
             // 打印一条日志，帮你快速定位是哪个 sortName 出了问题
-            System.err.println("警告：查询分类 [" + sortName + "] 时返回为空，已拦截数据库查询以防报错。");
+            System.err.println("警告：查询第一级别分类 [" + sortName + "] 时返回为空，已拦截数据库查询以防报错。");
             return new ArrayList<>(); // 返回空列表，前端就不会报错，只是不显示内容
         }
 

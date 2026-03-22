@@ -9,7 +9,7 @@
         values (#{author},#{rank},#{bookName},#{isbn},#{publish},#{birthday},#{marketPrice},#{price},#{stock},#{description},#{put},#{newProduct},#{recommend})
     </insert>
 
-    <select id="getBookByName" resultType="com.xu.store.entity.book.Book">
+    <select id="getBooksByName" resultType="com.xu.store.entity.book.Book">
         SELECT *
         FROM book
         WHERE bookName
@@ -238,7 +238,7 @@
     </update>
 
     <select id="getBookSort" resultType="com.xu.store.entity.book.BookSort">
-        select * from booksort where id in (select bookSortId from booksortlist where bookId=#{bookId})
+        select * from booksort where id in (select bookSortId from booksortlist where bookId=#{bookId}) limit 1
     </select>
 
     <select id="getBooksByFirst" parameterType="list" resultType="com.xu.store.entity.book.Book">

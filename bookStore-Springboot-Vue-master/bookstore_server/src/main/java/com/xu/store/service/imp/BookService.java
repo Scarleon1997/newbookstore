@@ -16,7 +16,7 @@ public interface BookService {
     int modifyBookStock(int id,int stockNum);//减库存stockNum
     int deleteBook(int id);
     List<Book> getBooks();
-    List<Book> getBookByName(String bookName);
+    List<Book> getBooksByName(String bookName);
     List<Book> getBooksByPage(int page,int pageSize);
     List<Book> getNewPutBookList(int page,int pageSize);
 

@@ -22,7 +22,7 @@ import com.xu.store.entity.book.Book;
 @RequestMapping(value = "/book")
 public class BookController {
 
-    private String basePath="D://ITsoftware//IDEA//data//Vue//book_01//";
+    private String basePath="C://MyAllData//Desktop//Project//newbookstore//bookStore-Springboot-Vue-master//bookstore_client//";
     private String bookPath="static//image//book//";
 
     @Autowired
@@ -103,11 +103,20 @@ public class BookController {
         }
         int bookSort[] = book.getBookSort();
         BookSort bookSort1 = bookService.getBookSort(bookId);
-        if(bookSort.length==1&&bookSort1.getId()!=bookSort[0]){
-            bookService.modifyBookSort(bookSort[0],bookId);
-        }
-        if(bookSort.length==2&&bookSort1.getId()!=bookSort[1]){
-            bookService.modifyBookSort(bookSort[1],bookId);
+        if (bookSort1 != null) {
+            if(bookSort.length==1&&bookSort1.getId()!=bookSort[0]){
+                bookService.modifyBookSort(bookSort[0],bookId);
+            }
+            if(bookSort.length==2&&bookSort1.getId()!=bookSort[1]){
+                bookService.modifyBookSort(bookSort[1],bookId);
+            }
+        } else {
+            // 如果原本没有分类，根据输入添加分类
+            if(bookSort.length==1){
+                bookService.addBookToSort(bookSort[0],bookId);
+            }else if(bookSort.length==2){
+                bookService.addBookToSort(bookSort[1],bookId);
+            }
         }
         return ResultUtil.resultCode(200,"修改图书成功");
     }
@@ -202,6 +211,16 @@ public class BookController {
         map.put("total",total);
         return ResultUtil.resultSuccess(map);
     }
+    /**
+     * 根据bookName得到图书集合
+     * @param bookName
+     * @return
+     */
+    @GetMapping(value = "/getBooksByName")
+    public Map<String, Object> getBooksByName(@RequestParam(value = "bookName")String bookName){
+        return null;
+    }
+
 
     /**
      * 得到某个分类的图书集合
@@ -211,6 +230,9 @@ public class BookController {
     @GetMapping(value = "/getSortBookList")
     public Map<String, Object> getSortBookList(@RequestParam(value = "sortId")int sortId){
         BookSort bookSort = sortService.getBookSortById(sortId);
+        if (bookSort == null) {
+            return ResultUtil.resultCode(500, "分类数据不存在 (ID: " + sortId + ")");
+        }
         List<Book> upperBookList = bookService.getBooksByFirst(bookSort.getSortName(),1,14);
         for(int i=0;i<upperBookList.size();i++){
             String img = bookService.getBookCover(upperBookList.get(i).getisbn());
@@ -252,6 +274,9 @@ public class BookController {
                                                      @RequestParam(value = "page")int page,
                                                      @RequestParam(value = "pageSize")int pageSize){
         BookSort bookSort = sortService.getBookSortById(sortId);
+        if (bookSort == null) {
+            return ResultUtil.resultCode(500, "分类数据不存在 (ID: " + sortId + ")");
+        }
         int total = 0;
         List<Book> bookList = new ArrayList<>();
         if(bookSort.getUpperName().equals("无")){
@@ -315,21 +340,31 @@ public class BookController {
         Map<String,Object> map = new HashMap<>();
         System.out.println("id:"+id);
         Book book = bookService.getBook(id);
-        List<String> img = bookService.getBookImgSrcList(book.getisbn());//null SQL: select * from booksort where upperName=?
+        if (book == null) {
+            return ResultUtil.resultCode(500, "该图书不存在 (ID: " + id + ")");
+        }
+        List<String> img = bookService.getBookImgSrcList(book.getisbn());
         book.setImgSrc(img);
         System.out.println("=======图书的封面：========="+book.getImgSrc()+"=========");
         BookSort bookSort = bookService.getBookSort(id);
         int upperId=0;
         int childId=0;
-        if(!bookSort.getUpperName().equals("无")){
-            upperId = sortService.getBookSortId("无",bookSort.getUpperName());
-            map.put("upperId",upperId);
-            childId = bookSort.getId();
-            map.put("childId",childId);
-        }
-        if(bookSort.getUpperName().equals("无")){
-            childId = bookSort.getId();
-            map.put("upperId",childId);
+        if (bookSort != null) {
+            if(!bookSort.getUpperName().equals("无")){
+                upperId = sortService.getBookSortId("无",bookSort.getUpperName());
+                map.put("upperId",upperId);
+                childId = bookSort.getId();
+                map.put("childId",childId);
+            }
+            if(bookSort.getUpperName().equals("无")){
+                childId = bookSort.getId();
+                map.put("upperId",childId);
+            }
+        } else {
+            // 如果 bookSort 为空，可以设置默认值或不传分类信息
+            System.err.println("警告：该图书(ID: " + id + ")未关联任何分类。");
+            map.put("upperId", 0);
+            map.put("childId", 0);
         }
 //        System.out.println("获取出来的bookSort:"+bookSort);
         map.put("book",book);

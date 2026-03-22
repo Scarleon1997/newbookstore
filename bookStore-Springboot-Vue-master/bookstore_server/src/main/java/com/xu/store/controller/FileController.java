@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 @ResponseBody
 public class FileController {
     private static final Logger log = LoggerFactory.getLogger(FileController.class);
-    private String basePath="C://ITsoftware//IDEA//data//Vue//book_01//";
+    private String basePath="C://MyAllData//Desktop//Project//newbookstore//bookStore-Springboot-Vue-master//bookstore_client//";
     private String bookPath="static//image//book01//";
 
     @Autowired

@@ -135,7 +135,7 @@
                 //添加修改的地址
                 address:{
                     id: null,
-                    account: "许瑞仕",
+                    account: "小黑",
                     name: "",
                     phone: "",
                     addr: "",
@@ -146,20 +146,20 @@
                     addressList:[
                         {
                             id: 1,
-                            account: "许瑞仕",
+                            account: "小黑",
                             name: "糖块",
-                            phone: "19129279954",
-                            addr: "广东省广州市白云区学苑路广东白云学院西校区",
+                            phone: "19112379954",
+                            addr: "广东省广州市xx区xx路xx学院",
                             label: "学校",
                             off: false,
                             select:false,
                         },
                         {
                             id: 2,
-                            account: "许瑞仕",
+                            account: "小黑",
                             name: "糖块",
-                            phone: "19129279954",
-                            addr: "广东省广州市白云区学苑路广东白云学院西校区",
+                            phone: "19112379954",
+                            addr: "广东省广州市xx区xx路xx学院",
                             label: "学校",
                             off: false,
                             select: false
@@ -168,7 +168,7 @@
                     //选中的地址
                     address:{
                         id: null,
-                        account: "许瑞仕",
+                        account: "小黑",
                         name: "",
                         phone: "",
                         addr: "",

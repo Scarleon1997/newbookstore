@@ -5,3 +5,5 @@
 /bookStore-Springboot-Vue-master/.kiro
 /bookStore-Springboot-Vue-master/.vscode
 /bookStore-Springboot-Vue-master/.idea
+bookStore-Springboot-Vue-master/bookstore_server/insert_books_20.sql
+bookStore-Springboot-Vue-master/bookstore_server/insert_booksortlist.sql

@@ -162,7 +162,7 @@ class StoreApplicationTests {
         Address address = new Address();
         address.setAccount("许瑞仕");
         address.setName("糖块");
-        address.setPhone("19129279954");
+        address.setPhone("19112379954");
         address.setLabel("学校");
         address.setAddr("广东省广州市");
         int result=addressService.setAddressOff(4);

@@ -147,6 +147,15 @@
         select imgSrc from bookimg where isbn=#{isbn} limit 1
     </select>
 
+    <select id="getBookCoversByIsbns" resultType="map">
+        SELECT isbn, imgSrc 
+        FROM bookimg 
+        WHERE isbn IN
+        <foreach collection="isbns" item="isbn" open="(" separator="," close=")">
+            #{isbn}
+        </foreach>
+    </select>
+
     <update id="modifyBookImgList">
         update bookimg set isbn=#{newIsbn} where isbn=#{oldIsbn}
     </update>

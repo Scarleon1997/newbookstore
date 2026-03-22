@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @Service("firstVersion")
@@ -239,6 +240,11 @@ public class BookServiceImp implements BookService {
     @Override
     public String getBookCover(String isbn) {
         return bookMapper.getBookCover(isbn);
+    }
+
+    @Override
+    public List<Map<String, Object>> getBookCoversByIsbns(List<String> isbns) {
+        return bookMapper.getBookCoversByIsbns(isbns);
     }
 
     @Override

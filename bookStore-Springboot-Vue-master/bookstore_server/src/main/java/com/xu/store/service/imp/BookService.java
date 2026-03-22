@@ -5,6 +5,7 @@ import com.xu.store.entity.dto.OrderBookDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public interface BookService {
@@ -36,6 +37,7 @@ public interface BookService {
     int deleteBookImgOfOne(String isbn);//删除某本书的全部图片
     int deleteOneBookImg(String isbn,String imgSrc);
     String getBookCover(String isbn);//得到书的封面图
+    List<Map<String, Object>> getBookCoversByIsbns(List<String> isbns);//批量得到书的封面图
     int modifyBookImgList(String oldIsbn,String newIsbn);
     List<String> getBookImgSrcList(String isbn);
 

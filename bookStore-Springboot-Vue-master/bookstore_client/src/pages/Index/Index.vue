@@ -103,8 +103,29 @@
                   <SpikeBox></SpikeBox>
                 </div>
             </el-tab-pane>
-            <el-tab-pane label="新书区" name="second">新书区</el-tab-pane>
-            <el-tab-pane label="书单区" name="third">书单区</el-tab-pane>
+            <el-tab-pane label="新书区" name="second">
+              <GalleryBook v-if="activeName === 'second'"></GalleryBook>
+            </el-tab-pane>
+            <el-tab-pane label="书单区" name="third">
+              <div class="topic_grid">
+                <div v-for="item in bookTopicList" :key="item.id" class="topic_item">
+                  <router-link :to="{path: '/bookTopic',query:{id:item.id}}">
+                    <el-image
+                      class="topic_cover"
+                      :src="(item.cover && item.cover !== '无') ? '/' + item.cover : null"
+                      fit="cover">
+                      <div slot="error" class="image-slot">
+                        <i class="el-icon-picture-outline"></i>
+                      </div>
+                    </el-image>
+                    <div class="topic_info">
+                      <div class="topic_name">{{item.topicName}}</div>
+                      <div class="topic_subtitle">{{item.subTitle}}</div>
+                    </div>
+                  </router-link>
+                </div>
+              </div>
+            </el-tab-pane>
           </el-tabs>
         </div>
       </div>
@@ -188,7 +209,12 @@
                         this.bookTopicList = [];
                         let list = response.bookTopicList;
                         for(let i=0;i<list.length;i++){
-                            this.bookTopicList.push({cover:list[i].cover,id:list[i].id});
+                            this.bookTopicList.push({
+                                cover:list[i].cover,
+                                id:list[i].id,
+                                topicName: list[i].topicName,
+                                subTitle: list[i].subTitle
+                            });
                         }
                     }
                 }).catch(err=>{
@@ -323,6 +349,65 @@
     width: 1240px;
     height: 700px;
     margin: 0px auto;
+  }
+
+  .topic_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .topic_item {
+    width: calc(20% - 16px);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 1px solid #eee;
+  }
+
+  .topic_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .topic_cover {
+    width: 100%;
+    height: 150px;
+    background-color: #f5f7fa;
+  }
+
+  .image-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #909399;
+    font-size: 30px;
+  }
+
+  .topic_info {
+    padding: 12px;
+  }
+
+  .topic_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .topic_subtitle {
+    font-size: 13px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .tab_page a{
     font-size: 19px;

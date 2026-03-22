@@ -6,13 +6,13 @@
                   :src="imgS"
                   fit="fill"></el-image>
         <div class="user_card_info">
-          <p style="font-size: 22px;color: #616161">一条小许瑞仕</p>
+          <p style="font-size: 22px;color: #616161">小黑</p>
           <p style="color: #757575">修改头像</p>
         </div>
       </div>
       <div class="user_action">
         <p> <span>账号安全:</span><span>普通</span></p>
-        <p> <span>绑定手机:</span><span>18370098989</span></p>
+        <p> <span>绑定手机:</span><span>17642987537</span></p>
         <p> <span>绑定邮箱:</span><span>123@qq.com</span></p>
       </div>
     </div>

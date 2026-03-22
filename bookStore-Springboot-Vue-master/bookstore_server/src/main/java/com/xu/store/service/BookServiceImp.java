@@ -242,11 +242,6 @@ public class BookServiceImp implements BookService {
     }
 
     @Override
-    public List<Map<String, Object>> getBookCoversByIsbns(List<String> isbns) {
-        return bookMapper.getBookCoversByIsbns(isbns);
-    }
-
-    @Override
     public int modifyBookImgList(String oldIsbn, String newIsbn) {
         return bookMapper.modifyBookImgList(oldIsbn, newIsbn);
     }

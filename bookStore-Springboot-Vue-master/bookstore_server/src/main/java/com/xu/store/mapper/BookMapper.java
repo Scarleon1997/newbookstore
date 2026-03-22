@@ -3,10 +3,8 @@ package com.xu.store.mapper;
 import com.xu.store.entity.book.*;
 import com.xu.store.entity.dto.OrderBookDto;
 import org.springframework.stereotype.Repository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface BookMapper {
@@ -41,7 +39,6 @@ public interface BookMapper {
     int deleteBookImgOfOne(String isbn);//删除某本书的全部图片
     int deleteOneBookImg(String isbn,String imgSrc);
     String getBookCover(String isbn);//得到书的封面图
-    List<Map<String, Object>> getBookCoversByIsbns(@Param("isbns") List<String> isbns);//批量得到书的封面图
     int modifyBookImgList(String oldIsbn,String newIsbn);//当某本图书的isbn好改变了，需要修改与该图书相关联的相册isbn号
     List<String> getBookImgSrcList(String isbn);//按isbn号得到某本图书的所有图书集合
 

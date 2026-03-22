@@ -182,47 +182,17 @@ public class OrderController {
                                                @RequestParam("beUserDelete")boolean beUserDelete){
         System.out.println("=========orderStatus,beUserDelete===========:"+orderStatus+" "+beUserDelete+"=========");
         List<OrderDto> orderDtoList = orderService.orderDtoList(account, page, pageSize,orderStatus,beUserDelete);
-        
-        // 批量查询封面图片（修复 N+1 查询问题）
-        if(orderDtoList != null && !orderDtoList.isEmpty()) {
-            // 1. 收集所有 ISBN
-            Set<String> isbns = new HashSet<>();
-            for(OrderDto orderDto : orderDtoList) {
-                List<OrderDetailDto> orderDetailDtoList = orderService.findOrderDetailDtoList(orderDto.getOrderId());
-                orderDto.setOrderDetailDtoList(orderDetailDtoList);
-                
-                for(OrderDetailDto detail : orderDetailDtoList) {
-                    if(detail.getBook() != null && detail.getBook().getisbn() != null) {
-                        isbns.add(detail.getBook().getisbn());
-                    }
-                }
+        for(int i=0;i<orderDtoList.size();i++){
+            List<OrderDetailDto> orderDetailDtoList = orderService.findOrderDetailDtoList(orderDtoList.get(i).getOrderId());
+            List<String> coverImgList = new ArrayList<>();
+            for(int j=0;j<orderDetailDtoList.size() && j<5;j++){
+                System.out.println("======orderDetailDtoList.get(j)====:"+orderDetailDtoList.get(j)+"=========");
+                String img = bookService.getBookCover(orderDetailDtoList.get(j).getBook().getisbn());
+                coverImgList.add(img);
             }
-            
-            // 2. 批量查询封面
-            Map<String, String> coverMap = new HashMap<>();
-            if(!isbns.isEmpty()) {
-                List<Map<String, Object>> covers = bookService.getBookCoversByIsbns(new ArrayList<>(isbns));
-                for(Map<String, Object> cover : covers) {
-                    coverMap.put((String)cover.get("isbn"), (String)cover.get("imgSrc"));
-                }
-            }
-            
-            // 3. 设置封面列表
-            for(OrderDto orderDto : orderDtoList) {
-                List<String> coverImgList = new ArrayList<>();
-                List<OrderDetailDto> orderDetailDtoList = orderDto.getOrderDetailDtoList();
-                
-                for(int j=0; j<orderDetailDtoList.size() && j<5; j++) {
-                    OrderDetailDto detail = orderDetailDtoList.get(j);
-                    if(detail.getBook() != null && detail.getBook().getisbn() != null) {
-                        String cover = coverMap.get(detail.getBook().getisbn());
-                        coverImgList.add(cover != null ? cover : "");
-                    }
-                }
-                orderDto.setCoverImgList(coverImgList);
-            }
+            System.out.println("=====coverImgList.size()====="+coverImgList.size()+"===================");
+            orderDtoList.get(i).setCoverImgList(coverImgList);
         }
-        
         Map<String,Object> map= new HashMap<>();
         map.put("orderDtoList",orderDtoList);
         int total = orderService.count(account,orderStatus,beUserDelete);

@@ -22,7 +22,7 @@ import java.util.*;
 @RequestMapping(value = "/topic")
 public class TopicController {
 
-    private String basePath="D://ITsoftware//IDEA//data//Vue//book_01//";
+    private String basePath="C://MyAllData//Desktop//Project//newbookstore//bookStore-Springboot-Vue-master//bookstore_client//";
     private String coverPath="static//image//topic//";
 
     @Qualifier("firstTopic")

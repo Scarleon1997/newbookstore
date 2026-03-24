@@ -6,8 +6,6 @@ import com.xu.store.mapper.BookMapper;
 import com.xu.store.mapper.SortMapper;
 import com.xu.store.service.imp.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -20,18 +18,11 @@ import java.util.Set;
 @Service("firstVersion")
 public class BookServiceImp implements BookService {
 
-    private static final String book_prefix="bookStore_book_";
-    private static final String bookList_prefix="bookStore_bookList";
-    private static final String book_stock="book_stock_";
-
     @Autowired
     BookMapper bookMapper;
 
     @Autowired
     SortMapper sortMapper;
-
-    @Autowired
-    RedisTemplate redisTemplate;
 
     @Override
     public int addBook(Book book) {
@@ -41,9 +32,6 @@ public class BookServiceImp implements BookService {
             System.out.println("============bookId===============:"+bookId);
             book.setId(bookId);
             System.out.println("=======book：======="+book.toString()+"============");
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-            redisTemplate.opsForValue().set(book_stock+book.getId(),book.getStock());
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -55,10 +43,6 @@ public class BookServiceImp implements BookService {
 //        System.out.println("============bookId===============:"+book1.getId());
         int result = bookMapper.modifyBook(book);
         if(result>0){
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-            redisTemplate.opsForValue().set(book_stock+book.getId(),book.getStock());
-//            redisTemplate.opsForZSet().remove(book1);
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -69,10 +53,6 @@ public class BookServiceImp implements BookService {
         System.out.println("============bookId===============:"+book1.getId());
         int result = bookMapper.modifyBookPut(id,put);
         if(result>0){
-            Book book = bookMapper.getBook(id);
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-//            redisTemplate.opsForZSet().remove(book1);
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -83,10 +63,6 @@ public class BookServiceImp implements BookService {
         System.out.println("============bookId===============:"+book1.getId());
         int result = bookMapper.modifyBookRec(id, recommend);
         if(result>0){
-            Book book = bookMapper.getBook(id);
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-//            redisTemplate.opsForZSet().remove(book1);
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -97,10 +73,6 @@ public class BookServiceImp implements BookService {
         System.out.println("============bookId===============:"+book1.getId());
         int result = bookMapper.modifyBookNewPro(id, newProduct);
         if(result>0){
-            Book book = bookMapper.getBook(id);
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-//            redisTemplate.opsForZSet().remove(book1);
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -111,11 +83,6 @@ public class BookServiceImp implements BookService {
         System.out.println("============bookId===============:"+book1.getId());
         int result = bookMapper.modifyBookStock(id,stockNum);
         if(result>0){
-            Book book = bookMapper.getBook(id);
-            redisTemplate.opsForValue().set(book_prefix+book.getId(),book);
-            redisTemplate.opsForValue().set(book_stock+book.getId(),book.getStock());
-//            redisTemplate.opsForZSet().remove(book1);
-            redisTemplate.opsForZSet().add(bookList_prefix,book,book.getRank());
         }
         return result;
     }
@@ -124,13 +91,6 @@ public class BookServiceImp implements BookService {
     public int deleteBook(int id) {
         int result = bookMapper.deleteBook(id);
         if(result>0){
-            if(redisTemplate.hasKey(book_prefix+id)){
-                redisTemplate.delete(book_prefix+id);
-            }
-            if(redisTemplate.hasKey(book_stock+id)){
-                redisTemplate.delete(book_stock+id);
-            }
-//            redisTemplate.opsForZSet().remove(bookMapper.getBook(id));
         }
         return result;
     }
@@ -148,14 +108,6 @@ public class BookServiceImp implements BookService {
     @Override
     public List<Book> getBooksByPage(int page, int pageSize) {
         int start = (page-1)*pageSize;
-//        if(redisTemplate.hasKey(bookList_prefix)){
-//            System.out.println("======从缓存中获取图书集合=======");
-//            Set range = redisTemplate.opsForZSet().range(bookList_prefix, start, start + pageSize);
-//            List<Book> bookList = new ArrayList<>(range);
-//            return bookList;
-//        }else {
-//            return bookMapper.getBooksByPage(start,pageSize);
-//        }
         return bookMapper.getBooksByPage(start,pageSize);
     }
 
@@ -187,12 +139,6 @@ public class BookServiceImp implements BookService {
 
     @Override
     public Book getBook(int id) {
-        ValueOperations<String, Book> operations = redisTemplate.opsForValue();
-        if(redisTemplate.hasKey(book_prefix+id)){
-            System.out.println("=========从缓存中读取单本图书的数据==========");
-            Book book = operations.get(book_prefix + id);
-            return book;
-        }
         System.out.println("=========从数据库中读取单本图书的数据==========");
         return bookMapper.getBook(id);
     }

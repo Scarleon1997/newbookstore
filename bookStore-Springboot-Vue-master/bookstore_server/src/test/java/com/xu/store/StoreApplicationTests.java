@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -375,80 +374,10 @@ class StoreApplicationTests {
     }
 
 
-//    ==========================redis的测试==============================================
-    @Autowired
-    RedisTemplate redisTemplate;
-
     @Test
     void addTest(){
-
-//        redisTemplate.opsForZSet().add("xu","xu",1);
-//        redisTemplate.opsForZSet().add("xu","long",2);
-//        redisTemplate.opsForZSet().add("xu","lon",3);
-//        redisTemplate.opsForZSet().add("xu","lo",4);
-//        redisTemplate.opsForZSet().add("xu","l",5);
-//        redisTemplate.opsForZSet().add("xu","xuRuiShi",6);
-//        redisTemplate.opsForZSet().add("xu","小xuRuiShi",2);
-
-        User user = new User();
-        user.setId(2);
-        user.setAccount("hhh");
-        redisTemplate.opsForZSet().add("userList",user,2);
-//
-//        Set user1 = redisTemplate.opsForZSet().range("userList", 0, 3);
-//        System.out.println(user1);
-        if(redisTemplate.hasKey("userList")){
-            Set userList = redisTemplate.opsForZSet().range("userList", 0, 3);
-            List<User> userList1 = new ArrayList<>(userList);
-            System.out.println(userList1);
-        }
-
-
-//
-//        redisTemplate.opsForZSet().remove("userList",user);
-//
-//        user1 = redisTemplate.opsForZSet().range("userList", 0, 3);
-//        System.out.println(user1);
-
-//
-//        Set<ZSetOperations.TypedTuple> set1 = new HashSet<ZSetOperations.TypedTuple>();
-//        int j = 9;
-//        for (int i = 1; i <= 3; i++) {
-//            User user = new User();
-//            user.setSalary(200);
-//            user.setUserName("许瑞仕");
-//            user.setPassWord("123456");
-//            user.setUid(i+3);
-//            //计算分数和值
-//            Double score1 = Double.valueOf(i);
-//            String value1 = "x" + i;
-//            //使用Spring提供的默认TypedTuple----DefaultTypedTuple
-//            ZSetOperations.TypedTuple typedTuple1 = new DefaultTypedTuple(user, score1);
-//            set1.add(typedTuple1);
-//        }
-//        //将元素插入有序集合zset1
-//        redisTemplate.opsForZSet().add("zset1", set1);
-//        Set zset1 = redisTemplate.opsForZSet().range("zset1", 0, 10);
-//        System.out.println(zset1);
-
-
-
-//        for(int i=10;i<13;i++){
-//            User user = new User();
-//            user.setUid(i);
-//            user.setSalary(200);
-//            user.setUserName("许瑞仕");
-//            user.setPassWord("123456");
-//            redisTemplate.opsForZSet().add("cat",user,new Date().getTime());
-//        }
-//
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("===========哈哈哈哈哈哈============");
-//                for (int i = 0; i < 5; i++) {
-//                    Timestamp timestamp = new Timestamp(new Date().getTime());
-//                    System.out.println(timestamp.getTime());
+        // Redis 测试代码已移除
+    }
 //                    try {
 //                        Thread.sleep(1000);
 //                    } catch (InterruptedException e) {

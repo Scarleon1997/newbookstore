@@ -3,7 +3,7 @@ package com.xu.store.mapper;
 import com.xu.store.entity.book.*;
 import com.xu.store.entity.dto.OrderBookDto;
 import org.springframework.stereotype.Repository;
-import org.springframework.data.repository.query.Param;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;

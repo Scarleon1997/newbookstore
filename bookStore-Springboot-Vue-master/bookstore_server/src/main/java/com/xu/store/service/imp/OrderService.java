@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public interface OrderService {
 
-    boolean addOrder(OrderInitDto orderInitDto);//添加订单 其中涉及添加总的订单表、订单明细表、费用信息表、还有减去库存的操作等
+    boolean addOrder(OrderInitDto orderInitDto) throws Exception;//添加订单 其中涉及添加总的订单表、订单明细表、费用信息表、还有减去库存的操作等
 
     int delOrder(int id);//删除订单  这里涉及了多表删除  并且只能删除已经完成了的订单
 

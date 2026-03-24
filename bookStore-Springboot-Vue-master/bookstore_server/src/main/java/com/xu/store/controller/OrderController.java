@@ -102,7 +102,7 @@ public class OrderController {
      * @return
      */
     @PostMapping("/addOrder")
-    public Map<String,Object> addOrder(@RequestBody OrderInitDto orderInitDto){
+    public Map<String,Object> addOrder(@RequestBody OrderInitDto orderInitDto) throws Exception{
         if(!orderService.addOrder(orderInitDto)){
             return ResultUtil.resultCode(500,"提交订单失败");
         }

@@ -151,7 +151,7 @@
         SELECT isbn, imgSrc 
         FROM bookimg 
         WHERE isbn IN
-        <foreach collection="list" item="isbn" open="(" separator="," close=")">
+        <foreach collection="isbns" item="isbn" open="(" separator="," close=")">
             #{isbn}
         </foreach>
     </select>

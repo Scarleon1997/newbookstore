@@ -392,23 +392,32 @@ public class BookController {
     @GetMapping("/delBook")
     public Map<String,Object> delBook(@RequestParam(value = "bookId")int bookId){
         System.out.println("删除图书起作用");
-        System.out.println("isbn:"+bookId);
-        Book book = bookService.getBook(bookId);
-        List<String> imgPaths = bookService.getBookImgSrcList(book.getisbn());
-        for(int i=0;i<imgPaths.size();i++){
-            String path=basePath+imgPaths.get(i);
-            imgPaths.set(i,path);
-        }
-        if(bookService.deleteBook(bookId)>0 && bookService.deleteBookImgOfOne(book.getisbn())>0){
-            System.out.println("删除图片大于0");
-
-            for(int i=0;i<imgPaths.size();i++){
-                System.out.println(imgPaths.get(i));
+        System.out.println("bookId:"+bookId);
+        try {
+            Book book = bookService.getBook(bookId);
+            String isbn = book.getisbn();
+            List<String> imgPaths = bookService.getBookImgSrcList(isbn);
+            
+            // 删除图书及关联数据
+            bookService.deleteBook(bookId);
+            
+            // 删除图书图片记录
+            bookService.deleteBookImgOfOne(isbn);
+            
+            // 删除图片文件
+            if(imgPaths.size()>0){
+                for(int i=0;i<imgPaths.size();i++){
+                    String path=basePath+imgPaths.get(i);
+                    imgPaths.set(i,path);
+                    System.out.println(imgPaths.get(i));
+                }
+                FileUtil.delImg(imgPaths);
             }
-            FileUtil.delImg(imgPaths);
             return ResultUtil.resultCode(200,"删除图书成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultUtil.resultCode(500,"删除图书失败: "+e.getMessage());
         }
-        return ResultUtil.resultCode(500,"删除图书失败");
     }
 
     /**

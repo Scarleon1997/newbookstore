@@ -18,6 +18,9 @@ public interface BookMapper {
     int modifyBookNewPro(int id,boolean newProduct);//修改图书是否为新品
     int modifyBookStock(int id,int stockNum);//减库存stockNum
     int deleteBook(int id);//删除图书
+    int deleteBookRelatedData(int id);
+    int deleteBookRecommend(int id);
+    int deleteBookSortList(int id);
     List<Book> getBooks();//得到所有图书
     List<Book> getBooksByName(String bookName);//按名字得到图书集合
     List<Book> getBooksByPage(int page,int pageSize);//按页得到图书集合

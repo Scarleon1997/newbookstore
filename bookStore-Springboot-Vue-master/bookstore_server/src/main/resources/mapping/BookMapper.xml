@@ -17,11 +17,17 @@
     </select>
 
     <delete id="deleteBook">
-        delete book,newproduct,recommend,booksortlist from book
-            left join newproduct on book.id=newproduct.bookId
-            left join recommend on book.id=recommend.bookId
-            left join booksortlist on book.id=booksortlist.bookId
-            where book.id=#{id}
+        DELETE FROM book WHERE id = #{id}
+    </delete>
+    
+    <delete id="deleteBookRelatedData">
+        DELETE FROM newproduct WHERE bookId = #{id}
+    </delete>
+    <delete id="deleteBookRecommend">
+        DELETE FROM recommend WHERE bookId = #{id}
+    </delete>
+    <delete id="deleteBookSortList">
+        DELETE FROM booksortlist WHERE bookId = #{id}
     </delete>
 
     <update id="modifyBook">

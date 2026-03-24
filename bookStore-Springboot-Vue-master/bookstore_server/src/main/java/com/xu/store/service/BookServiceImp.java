@@ -89,9 +89,12 @@ public class BookServiceImp implements BookService {
 
     @Override
     public int deleteBook(int id) {
+        // 先删除关联数据
+        bookMapper.deleteBookRelatedData(id);
+        bookMapper.deleteBookRecommend(id);
+        bookMapper.deleteBookSortList(id);
+        // 再删除主表数据
         int result = bookMapper.deleteBook(id);
-        if(result>0){
-        }
         return result;
     }
 
